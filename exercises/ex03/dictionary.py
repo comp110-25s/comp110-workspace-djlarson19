@@ -4,8 +4,8 @@ __author__: str = 730667045
 def invert(d: dict[str, str]) -> dict[str, str]:
     """Inverts the dictionary given"""
     inv = {}
-    for k, v in d.items():
-        if v in inv:
+    for k, v in d:
+        if k in inv:
             raise KeyError("Duplicate key detected")
         inv[v] = k
     return inv
@@ -31,7 +31,7 @@ def favorite_color(colors: dict[str, str]) -> str:
             color_counts[color] += 1
         else:
             color_counts[color] = 1
-    return max(color_counts, key=color_counts.get)
+    return max(color_counts[color])
 
 
 def bin_len(list: list[str]) -> dict[int, set[str]]:
@@ -42,3 +42,10 @@ def bin_len(list: list[str]) -> dict[int, set[str]]:
             length_bins[length] = set()
         length_bins[length](word)
     return length_bins
+
+
+# git config --global user.email "djlarsonbda@gmail.com"
+# git config --global user.name "Daniel Larson"
+
+# It wouldn't let me commit the backup point, so I created a a fork to stage the data that I think is saved in my workspace.
+# It said that I needed a username and email to backup so I ran the two lines of code above after opening Github but nothing changed.
